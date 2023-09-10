@@ -1,12 +1,13 @@
-const socket = io('http://localhost:3002');
+const socket = io('https://chat-websocket-yp19.onrender.com');
 const msgBox = document.getElementById('exampleFormControlTextarea1');
 const msgCont = document.getElementById('data-container');
 const email = document.getElementById('email');
+const APP_URL = 'https://chat-websocket-yp19.onrender.com';
 
 //get old messages from the server
 const messages = [];
 function getMessages() {
-  fetch('http://localhost:3002/api/chat')
+  fetch(`${APP_URL}/api/chat`)
     .then((response) => response.json())
     .then((data) => {
       loadDate(data);
